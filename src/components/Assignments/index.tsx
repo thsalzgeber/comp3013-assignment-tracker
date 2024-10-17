@@ -1,9 +1,9 @@
 import { Assignment } from "../Assignment";
 import styles from "./assignments.module.css";
-import { AssignmentList } from "../../App"
+import { TAssignmentList } from "../Types/types";
 
 type AssignmentsProps = {
-  assignmentList: AssignmentList[];
+  assignmentList: TAssignmentList[];
   onDeleteAssigment: (id: string) => void;
   onCompletedAssignment: (id: string) => void;
 }
@@ -19,14 +19,18 @@ export function Assignments({ assignmentList, onDeleteAssigment, onCompletedAssi
 
         <div>
           <p className={styles.textPurple}>Completed Assignments</p>
-          <span>0 of {assignmentList.length}</span>
+          <span>{assignmentList.filter(assignment => assignment.completed).length} of {assignmentList.length}</span>
         </div>
       </header>
 
       <div className={styles.list}>
         {
           assignmentList.map((assignment) =>
-            < Assignment key={assignment.id} id={assignment.id} title={assignment.title} completed={assignment.completed} onDelete={onDeleteAssigment} onComplete={onCompletedAssignment} />
+            < Assignment
+              key={assignment.id}
+              assignment={assignment}
+              onDelete={onDeleteAssigment}
+              onComplete={onCompletedAssignment} />
           )
         }
 

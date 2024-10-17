@@ -1,23 +1,20 @@
 import { Header } from "./components/Header";
 import { Assignments } from "./components/Assignments";
 import { useState } from "react";
+import { TAssignmentList } from "./components/Types/types";
 
-export type AssignmentList = {
-  id: string;
-  title: string;
-  completed: boolean;
-}
 
 function App() {
-  const [newAssignments, setNewAssignment] = useState<AssignmentList[]>([])
+  const [newAssignments, setNewAssignment] = useState<TAssignmentList[]>([])
 
   function handleNewAssignment(assignment: string) {
     setNewAssignment(prevAssignment => {
-      const newAssignment: AssignmentList = {
+      const newAssignment: TAssignmentList = {
         id: crypto.randomUUID(),
         title: assignment,
         completed: false
       }
+
       return [...prevAssignment, newAssignment];
     })
   }
@@ -29,9 +26,10 @@ function App() {
 
   const handleCompletedAssignment = (id: string) => {
     setNewAssignment(newAssignments.map(assignment =>
-      assignment.id === id ? { ...assignment, completed: true } : assignment
+      assignment.id === id ? { ...assignment, completed: !assignment.completed } : assignment
 
     ))
+
   }
 
   return (
