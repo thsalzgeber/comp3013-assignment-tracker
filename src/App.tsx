@@ -7,11 +7,12 @@ import { TAssignmentList } from "./components/Types/types";
 function App() {
   const [newAssignments, setNewAssignment] = useState<TAssignmentList[]>([])
 
-  function handleNewAssignment(assignment: string) {
+  function handleNewAssignment(assignment: string, deadline: Date) {
     setNewAssignment(prevAssignment => {
       const newAssignment: TAssignmentList = {
         id: crypto.randomUUID(),
         title: assignment,
+        deadline: deadline,
         completed: false
       }
 

@@ -2,7 +2,7 @@
   width: 100%;
   max-width: 736px;
   margin: 0 auto;
-  margin-top: 90px;
+  margin-top: 300px;
   padding: 0 1rem;
 }
 
@@ -13,7 +13,7 @@
   margin-bottom: 24px;
 }
 
-.header > div {
+.header>div {
   display: flex;
   align-items: center;
   gap: 8px;

@@ -47,3 +47,41 @@ p.textCompleted {
   border: none;
   color: #808080;
 }
+
+/* styles for deadline */
+
+.deadline {
+  margin-left: 10px;
+  padding: 5px 0px;
+  border-radius: 12px;
+  color: white;
+  display: inline-block;
+  min-width: 150px;
+  min-height: 25px;
+  text-align: center;
+}
+
+.dueYesterday {
+  background-color: #2f5ebd;
+}
+
+.dueInPast {
+  background-color: #8c92ac;
+}
+
+.dueNow {
+  background-color: orange;
+}
+
+.tomorrow {
+  background-color: red;
+}
+
+.future {
+  background-color: green;
+}
+
+.deadlinecompleted {
+  text-decoration: line-through;
+  opacity: 30%;
+}
