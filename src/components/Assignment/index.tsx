@@ -49,7 +49,7 @@ export function Assignment({ assignment, onDelete, onComplete }: AssignmentProps
         {assignment.completed ? <FaCheckCircle size={20} /> : <div className={styles.checkContainer} />}
       </button>
 
-      {assignment.completed ? <p className={styles.textCompleted}> {assignment.title}</p> : <p>{assignment.title}  / {deadLine}</p>}
+      {assignment.completed ? <p className={styles.textCompleted}> {assignment.title}</p> : <p>{assignment.title}</p>}
 
 
       {assignment.completed ?

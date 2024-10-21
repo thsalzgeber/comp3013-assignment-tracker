@@ -44,8 +44,8 @@ export function Header({ onAddAssignment }: NewAssignmentProps) {
           mode="single"
           selected={selectedDeadline}
           onSelect={setSelectedDeadline}
-          // disabled={{ before: new Date() }}
-          // captionLayout="dropdown"
+          disabled={{ before: new Date() }}
+          captionLayout="dropdown"
           footer={selectedDeadline ? `Selected: ${format(selectedDeadline, 'MMM dd, yyyy')}` : "Pick a day."
           } />
 
